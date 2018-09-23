@@ -4,62 +4,80 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:orientation="vertical"
-    android:background="@drawable/bg1"
-    android:padding="@dimen/padding">
+    tools:context=".MainActivity"
+        android:background="@drawable/bg1"
+    >
 
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/hang1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_weight="1">
+        android:layout_height="65dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/bt_sao"
-            android:layout_width="30dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bt_sao" />
-        <TextView
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/diem"
-            android:textSize="@dimen/text_size"
-            android:textColor="@color/color_diem" />
-        <TextView
-            android:layout_width="match_parent"
+            android:layout_alignParentRight="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="điểm số"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="@color/color_diem"
+                android:textSize="20sp" />
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/sao"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="400dp"
             android:layout_height="wrap_content"
-            android:text="@string/title"
-            android:textSize="@dimen/text_size"
-            android:textAlignment="center"
-            android:textColor="@color/color_text" />
-    </LinearLayout>
+           android:background="@drawable/backg1"
+            android:layout_centerHorizontal="true"
+        <Button
+            android:id="@+id/nut_thoat"
+            android:layout_width="50dp"
+            android:layout_height="130dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/custombackbutton"
+            android:layout_marginTop="5dp"/>
+    </RelativeLayout>
+
     <LinearLayout
+        android:id="@+id/hang2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/bt_1"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/bt_height"
+            android:layout_margin="@dimen/margin_image"
             android:layout_weight="1"
             android:background="@drawable/bt_do"
-            android:layout_margin="@dimen/margin_image"
             android:text="1"
-            android:textSize="@dimen/text_size_button"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:textSize="@dimen/text_size_button" />
+
         <Button
             android:id="@+id/bt_2"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/bt_height"
+            android:layout_margin="@dimen/margin_image"
             android:layout_weight="1"
             android:background="@drawable/bt_vang"
-            android:layout_margin="@dimen/margin_image"
             android:text="2"
-            android:textSize="@dimen/text_size_button"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:textSize="@dimen/text_size_button" />
 
         <Button
             android:id="@+id/bt_3"
@@ -71,29 +89,31 @@
             android:text="3"
             android:textAlignment="center"
             android:textSize="@dimen/text_size_button" />
+
         <Button
             android:id="@+id/bt_4"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/bt_height"
+            android:layout_margin="@dimen/margin_image"
             android:layout_weight="1"
             android:background="@drawable/bt_xanhla"
-            android:layout_margin="@dimen/margin_image"
             android:text="4"
-            android:textSize="@dimen/text_size_button"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:textSize="@dimen/text_size_button" />
+
         <Button
             android:id="@+id/bt_5"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/bt_height"
+            android:layout_margin="@dimen/margin_image"
             android:layout_weight="1"
             android:background="@drawable/bt_hong"
-            android:layout_margin="@dimen/margin_image"
             android:text="5"
-            android:textSize="@dimen/text_size_button"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:textSize="@dimen/text_size_button" />
     </LinearLayout>
     <LinearLayout
-        android:layout_width="match_parent"
+             android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_weight="1">
@@ -149,10 +169,5 @@
             android:textSize="@dimen/text_size_button"
             android:textAlignment="center"/>
     </LinearLayout>
-    <Button
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_weight="1"
-        android:background="@drawable/bt_back"
-        android:layout_marginTop="@dimen/margin_image"/>
+
 </LinearLayout>
