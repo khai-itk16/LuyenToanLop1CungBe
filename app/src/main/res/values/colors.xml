@@ -5,4 +5,7 @@
     <color name="colorAccent">#FF4081</color>
     <color name="color_diem">#FFFC36</color>
     <color name="color_text">#000000</color>
+    <color name="mau_button">#b4e1a3</color>
+    <color name="mauvang">#e2c41b</color>
+    <color name="chonbaihoc">#e63131</color>
 </resources>

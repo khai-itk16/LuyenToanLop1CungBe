@@ -14,10 +14,11 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_weight="1">
+
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/bt_sao"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/bt_sao" />
         <TextView
             android:layout_width="wrap_content"
