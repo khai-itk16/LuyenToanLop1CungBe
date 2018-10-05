@@ -17,7 +17,8 @@
         android:background="@drawable/custombuttonstart"
         android:text="BẮT ĐẦU NÀO"
         android:textColor="#fff"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:id="@+id/bt_bd" />
 
 
 

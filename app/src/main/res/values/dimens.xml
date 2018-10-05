@@ -6,5 +6,5 @@
     <dimen name="margin_image">10dp</dimen>
     <dimen name="margin_image_1">5dp</dimen>
     <dimen name="bt_height">85dp</dimen>
-    <dimen name="text_size_small">15sp</dimen>
+    <dimen name="text_size_small">20sp</dimen>
 </resources>
