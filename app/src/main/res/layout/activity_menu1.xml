@@ -12,7 +12,7 @@
         android:layout_height="65dp">
 
         <Button
-            android:id="@+id/nut_thoat"
+            android:id="@+id/bt_back"
             android:layout_width="55dp"
             android:layout_height="60dp"
             android:layout_marginLeft="10dp"
@@ -78,6 +78,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
                 <Button
+                    android:id="@+id/bt1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="45dp"
@@ -102,6 +103,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
                 <Button
+                    android:id="@+id/bt2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="45dp"
@@ -127,6 +129,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
                 <Button
+                    android:id="@+id/bt3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="45dp"
@@ -158,6 +161,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
                 <Button
+                    android:id="@+id/bt4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="45dp"
@@ -183,6 +187,7 @@
                 android:orientation="vertical">
 
                 <Button
+                    android:id="@+id/bt5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="45dp"
@@ -206,6 +211,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
                 <Button
+                    android:id="@+id/bt6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="45dp"
