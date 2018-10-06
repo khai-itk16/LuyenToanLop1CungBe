@@ -105,27 +105,7 @@
             android:textAlignment="center"
             android:textSize="@dimen/text_size_button" />
 
-        <Button
-            android:id="@+id/bt_4"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/bt_height"
-            android:layout_margin="@dimen/margin_image"
-            android:layout_weight="1"
-            android:background="@drawable/bt_quadau"
-            android:text="4"
-            android:textAlignment="center"
-            android:textSize="@dimen/text_size_button" />
 
-        <Button
-            android:id="@+id/bt_5"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/bt_height"
-            android:layout_margin="@dimen/margin_image"
-            android:layout_weight="1"
-            android:background="@drawable/bt_quadau"
-            android:text="5"
-            android:textAlignment="center"
-            android:textSize="@dimen/text_size_button" />
     </LinearLayout>
 
     <LinearLayout
@@ -135,7 +115,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/bt_6"
+            android:id="@+id/bt_4"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/bt_height"
             android:layout_margin="@dimen/margin_image"
@@ -146,7 +126,7 @@
             android:textSize="@dimen/text_size_button" />
 
         <Button
-            android:id="@+id/bt_7"
+            android:id="@+id/bt_5"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/bt_height"
             android:layout_margin="@dimen/margin_image"
@@ -157,7 +137,7 @@
             android:textSize="@dimen/text_size_button" />
 
         <Button
-            android:id="@+id/bt_8"
+            android:id="@+id/bt_6"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/bt_height"
             android:layout_margin="@dimen/margin_image"
@@ -167,27 +147,7 @@
             android:textAlignment="center"
             android:textSize="@dimen/text_size_button" />
 
-        <Button
-            android:id="@+id/bt_9"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/bt_height"
-            android:layout_margin="@dimen/margin_image"
-            android:layout_weight="1"
-            android:background="@drawable/bt_quadau"
-            android:text="9"
-            android:textAlignment="center"
-            android:textSize="@dimen/text_size_button" />
 
-        <Button
-            android:id="@+id/bt_10"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/bt_height"
-            android:layout_margin="@dimen/margin_image"
-            android:layout_weight="1"
-            android:background="@drawable/bt_quadau"
-            android:text="10"
-            android:textAlignment="center"
-            android:textSize="@dimen/text_size_button" />
     </LinearLayout>
 
 </LinearLayout>
