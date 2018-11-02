@@ -19,7 +19,6 @@ package="com.itk16.bk.pc.luyentoanlop1cungbe">
     <activity android:name=".MainActivity" android:screenOrientation="landscape"></activity>
     <activity android:name=".Menu" android:screenOrientation="landscape"></activity>
     <activity android:name=".Menu1" android:screenOrientation="landscape"></activity>
-    <activity android:name=".Bai1" android:screenOrientation="landscape"></activity>
     <activity android:name=".Bai2" android:screenOrientation="landscape"></activity>
     <activity android:name=".Bai3" android:screenOrientation="landscape"></activity>
     <activity android:name=".Bai4" android:screenOrientation="landscape"></activity>
