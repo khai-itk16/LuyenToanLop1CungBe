@@ -7,7 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-public class Bai1 extends AppCompatActivity implements View.OnClickListener {
+import java.util.HashMap;
+
+public class Bai extends AppCompatActivity implements View.OnClickListener {
     private Button bt_back;
     private Button bt_1;
     private Button bt_2;
@@ -15,13 +17,28 @@ public class Bai1 extends AppCompatActivity implements View.OnClickListener {
     private Button bt_4;
     private Button bt_5;
     private Button bt_6;
+    private Integer bai;
+    private static HashMap map = new HashMap<Integer, Integer>();
+
+    static {
+        map.put(1, R.layout.activity_bai1);
+        map.put(2, R.layout.activity_bai2);
+        map.put(3, R.layout.activity_bai3);
+        map.put(4, R.layout.activity_bai4);
+        map.put(5, R.layout.activity_bai5);
+    }
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bai1);
+
+        bai = getIntent().getIntExtra("bai", -1);
+        setContentView((Integer)map.get(bai));
+
         khaibao();
         setevent();
     }
+
     public void khaibao()
     {
         bt_back=(Button)findViewById(R.id.nut_thoat);
@@ -32,6 +49,7 @@ public class Bai1 extends AppCompatActivity implements View.OnClickListener {
         bt_5=(Button)findViewById(R.id.bt_5);
         bt_6=(Button)findViewById(R.id.bt_6);
     }
+
     public void setevent()
     {
         bt_back.setOnClickListener(this);
@@ -41,17 +59,14 @@ public class Bai1 extends AppCompatActivity implements View.OnClickListener {
         bt_4.setOnClickListener(this);
         bt_5.setOnClickListener(this);
         bt_6.setOnClickListener(this);
-
     }
-
 
     @Override
     public void onClick(View v) {
         switch (v.getId())
         {
             case R.id.nut_thoat:
-                Intent it1 = new Intent(Bai1.this, Menu1.class);
-                startActivity(it1);
+                finish();
                 break;
             case R.id.bt_1:
                 break;
@@ -64,10 +79,7 @@ public class Bai1 extends AppCompatActivity implements View.OnClickListener {
             case R.id.bt_5:
                 break;
             case R.id.bt_6:
-            break;
-
-
+                break;
         }
-
     }
 }

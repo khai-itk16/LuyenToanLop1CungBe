@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-public class Menu1_1 extends AppCompatActivity implements View.OnClickListener{
+public class Menu1 extends AppCompatActivity implements View.OnClickListener{
 
     private Button bt_back;
     private Button  bt1;
@@ -57,8 +57,8 @@ public class Menu1_1 extends AppCompatActivity implements View.OnClickListener{
         }
 
         int bai = (int)v.getTag();
-        Intent it =new Intent(Menu1_1.this, Bai.class);
-        it.putExtra("bai", bai);
-        startActivity(it);
+        Intent intent =new Intent(Menu1.this, Bai.class);
+        intent.putExtra("bai", bai);
+        startActivity(intent);
     }
 }

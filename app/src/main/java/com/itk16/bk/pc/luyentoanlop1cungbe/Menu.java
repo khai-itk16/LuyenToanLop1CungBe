@@ -10,12 +10,14 @@ public class Menu extends AppCompatActivity {
 
     private Button bt_menu1;
     private Button bt_menu2;
+    private Button bt_exit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         bt_menu1= (Button)findViewById(R.id.bt_menu1);
         bt_menu2= (Button)findViewById(R.id.bt_menu2);
+        bt_exit= (Button)findViewById(R.id.btnExit);
         bt_menu1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -24,6 +26,14 @@ public class Menu extends AppCompatActivity {
             }
         });
 
+
+
+        bt_exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 }

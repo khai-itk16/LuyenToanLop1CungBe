@@ -21,6 +21,7 @@ public class InTro extends AppCompatActivity
             public void run() {
                 Intent gotomain = new Intent(InTro.this,MainActivity.class );
                 startActivity(gotomain);
+                finish();
             }
         },3000);
     }
