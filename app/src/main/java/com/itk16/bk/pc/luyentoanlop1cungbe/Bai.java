@@ -1,24 +1,24 @@
 package com.itk16.bk.pc.luyentoanlop1cungbe;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 
+import com.itk16.bk.pc.luyentoanlop1cungbe.adapter.CustomAdapter;
+import com.itk16.bk.pc.luyentoanlop1cungbe.model.Lesson;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Bai extends AppCompatActivity implements View.OnClickListener {
     private Button bt_back;
-    private Button bt_1;
-    private Button bt_2;
-    private Button bt_3;
-    private Button bt_4;
-    private Button bt_5;
-    private Button bt_6;
+    private ListView listView;
     private Integer bai;
     private static HashMap map = new HashMap<Integer, Integer>();
+    private ArrayList<Lesson> ArrayLesson=new ArrayList<>();
 
     static {
         map.put(1, R.layout.activity_bai1);
@@ -34,52 +34,51 @@ public class Bai extends AppCompatActivity implements View.OnClickListener {
 
         bai = getIntent().getIntExtra("bai", -1);
         setContentView((Integer)map.get(bai));
-
+        loadFackdata();
         khaibao();
         setevent();
+        CustomAdapter customAdapter= new CustomAdapter(this,R.layout.item,ArrayLesson);
+        listView.setAdapter(customAdapter);
+
     }
 
     public void khaibao()
     {
         bt_back=(Button)findViewById(R.id.nut_thoat);
-        bt_1=(Button)findViewById(R.id.bt_1);
-        bt_2=(Button)findViewById(R.id.bt_2);
-        bt_3=(Button)findViewById(R.id.bt_3);
-        bt_4=(Button)findViewById(R.id.bt_4);
-        bt_5=(Button)findViewById(R.id.bt_5);
-        bt_6=(Button)findViewById(R.id.bt_6);
+        listView=(ListView)findViewById(R.id.lv);
     }
 
     public void setevent()
     {
         bt_back.setOnClickListener(this);
-        bt_1.setOnClickListener(this);
-        bt_2.setOnClickListener(this);
-        bt_3.setOnClickListener(this);
-        bt_4.setOnClickListener(this);
-        bt_5.setOnClickListener(this);
-        bt_6.setOnClickListener(this);
+       // listView.setOnItemClickListener((AdapterView.OnItemClickListener) this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId())
         {
-            case R.id.nut_thoat:
+                case R.id.nut_thoat:
                 finish();
                 break;
-            case R.id.bt_1:
-                break;
-            case R.id.bt_2:
-                break;
-            case R.id.bt_3:
-                break;
-            case R.id.bt_4:
-                break;
-            case R.id.bt_5:
-                break;
-            case R.id.bt_6:
-                break;
+                default:
+                    break;
+
         }
+    }
+    public void loadFackdata()
+    {
+        Lesson ls1 = new Lesson("Bai 1", 0,"Lam quen cac so 1,2,3,4.",0);
+        Lesson ls2 = new Lesson("Bai 2", 1,"Lam quen cac so 5,6,7,8.",0);
+        Lesson ls3 = new Lesson("Bai 3", 1,"Lam quen cac so 9,10,11,12.",0);
+        Lesson ls4 = new Lesson("Bai 4", 1,"Lam quen cac so 13,2,3.",0);
+        Lesson ls5 = new Lesson("Bai 5", 1,"Lam quen cac so 1,2,3.",0);
+
+        ArrayLesson.add(ls1);
+        ArrayLesson.add(ls2);
+        ArrayLesson.add(ls3);
+        ArrayLesson.add(ls4);
+        ArrayLesson.add(ls5);
+
     }
 }
