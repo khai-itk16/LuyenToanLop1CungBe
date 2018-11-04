@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.itk16.bk.pc.luyentoanlop1cungbe.R;
 import com.itk16.bk.pc.luyentoanlop1cungbe.model.Lesson;
@@ -39,7 +40,7 @@ public class CustomAdapter extends ArrayAdapter<Lesson> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         ViewHolder viewHolder;
-        Lesson lesson = mArray.get(position);
+        final Lesson lesson = mArray.get(position);
        if (convertView==null){
             convertView = LayoutInflater.from(context).inflate(R.layout.item, parent, false);
             viewHolder = new ViewHolder();
@@ -65,6 +66,15 @@ public class CustomAdapter extends ArrayAdapter<Lesson> {
         viewHolder.tv_Title.setText(lesson.getmTenbaihoc());
         viewHolder.bt_hoc.setText("Bắt Đầu");
         viewHolder.bt_hoc.setBackgroundResource(R.drawable.custom_bt_play);
+        viewHolder.bt_hoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (lesson.getmLock()==1)
+                {
+                    Toast.makeText(context, "Bạn chưa được phép chơi màn này!",)
+                }
+            }
+        });
         return convertView;
 
     }
