@@ -2,10 +2,10 @@ package com.itk16.bk.pc.luyentoanlop1cungbe.model;
 
 public class Lesson {
     private String mTenbaihoc;
-    private int mLock;
+    private boolean mLock;
     private String mNoidung;
     private int sao ;
-    public Lesson(String mTenbaihoc, int mLock, String mNoidung, int sao) {
+    public Lesson(String mTenbaihoc, boolean mLock, String mNoidung, int sao) {
         this.mTenbaihoc = mTenbaihoc;
         this.mLock = mLock;
         this.mNoidung = mNoidung;
@@ -20,11 +20,11 @@ public class Lesson {
         this.mTenbaihoc = mTenbaihoc;
     }
 
-    public int getmLock() {
+    public boolean getmLock() {
         return mLock;
     }
 
-    public void setmLock(int mLock) {
+    public void setmLock(boolean mLock) {
         this.mLock = mLock;
     }
 

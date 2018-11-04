@@ -10,13 +10,12 @@
 
     <ImageView
         android:id="@+id/Lock"
-        android:layout_width="75dp"
+        android:layout_width="53dp"
         android:layout_height="100dp"
         android:layout_marginBottom="15dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="15dp"
-        android:layout_weight="1"
-        />
+        android:layout_weight="1" />
 
     <TextView
         android:id="@+id/Title"
