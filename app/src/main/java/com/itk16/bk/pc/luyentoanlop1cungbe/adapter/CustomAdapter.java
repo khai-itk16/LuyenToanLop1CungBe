@@ -13,7 +13,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.itk16.bk.pc.luyentoanlop1cungbe.Bai;
 import com.itk16.bk.pc.luyentoanlop1cungbe.R;
 import com.itk16.bk.pc.luyentoanlop1cungbe.model.Lesson;
 
@@ -32,14 +34,14 @@ public class CustomAdapter extends ArrayAdapter<Lesson> {
         this.context = context;
         this.Resource = resource;
         this.mArray = objects;
+
     }
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    public View getView(final int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         ViewHolder viewHolder;
-        Lesson lesson = mArray.get(position);
        if (convertView==null){
             convertView = LayoutInflater.from(context).inflate(R.layout.item, parent, false);
             viewHolder = new ViewHolder();
@@ -47,29 +49,38 @@ public class CustomAdapter extends ArrayAdapter<Lesson> {
             viewHolder.tv_Title = convertView.findViewById(R.id.Title);
             viewHolder.bt_hoc = convertView.findViewById(R.id.bt_hoc);
             convertView.setTag(viewHolder);
-
-            Log.d(TAG, (position+1)+"");
+            //Log.d(TAG, (position+1)+"");
        }
         else{
             viewHolder = (ViewHolder)convertView.getTag();
         }
-        //Lesson lesson = mArray.get(position);
-        if(lesson.getmLock()==1)
+
+        Lesson lesson = mArray.get(position);
+        if(lesson.getmLock())
         {
             viewHolder.im_lock.setBackgroundResource(R.drawable.lock);
+          //  Log.d(TAG, (position+1)+"");
+        }else{
+            viewHolder.im_lock.setBackgroundResource(0);
         }
-        else
-        {
-            viewHolder.im_lock.setBackgroundResource(R.drawable.buttonquadau);
-        }
+
         viewHolder.tv_Title.setText(lesson.getmTenbaihoc());
         viewHolder.bt_hoc.setText("Bắt Đầu");
         viewHolder.bt_hoc.setBackgroundResource(R.drawable.custom_bt_play);
-        return convertView;
 
+        viewHolder.bt_hoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(mArray.get(position).getmLock()){
+                    Toast.makeText(context, "Bạn chưa được phép chơi màn này!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        return convertView;
     }
 
-    public class ViewHolder
+
+    public static class ViewHolder
     {
         ImageView im_lock;
         TextView tv_Title;

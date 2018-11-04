@@ -4,8 +4,10 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.itk16.bk.pc.luyentoanlop1cungbe.adapter.CustomAdapter;
 import com.itk16.bk.pc.luyentoanlop1cungbe.model.Lesson;
@@ -37,7 +39,7 @@ public class Bai extends AppCompatActivity implements View.OnClickListener {
         loadFackdata();
         khaibao();
         setevent();
-        CustomAdapter customAdapter= new CustomAdapter(this,R.layout.item,ArrayLesson);
+        CustomAdapter customAdapter = new CustomAdapter(Bai.this,R.layout.item,ArrayLesson);
         listView.setAdapter(customAdapter);
 
     }
@@ -51,7 +53,6 @@ public class Bai extends AppCompatActivity implements View.OnClickListener {
     public void setevent()
     {
         bt_back.setOnClickListener(this);
-       // listView.setOnItemClickListener((AdapterView.OnItemClickListener) this);
     }
 
     @Override
@@ -61,30 +62,21 @@ public class Bai extends AppCompatActivity implements View.OnClickListener {
                 case R.id.nut_thoat:
                 finish();
                 break;
-                default:
-                    break;
 
         }
     }
     public void loadFackdata()
     {
-        Lesson ls1 = new Lesson("Bai 1", 0,"Lam quen cac so 1,2,3,4.",0);
-        Lesson ls2 = new Lesson("Bai 2", 1,"Lam quen cac so 5,6,7,8.",0);
-        Lesson ls3 = new Lesson("Bai 3", 1,"Lam quen cac so 9,10,11,12.",0);
-        Lesson ls4 = new Lesson("Bai 4", 0,"Lam quen cac so 13,2,3.",0);
-        Lesson ls5 = new Lesson("Bai 5", 1,"Lam quen cac so 1,2,3.",0);
-        Lesson ls6 = new Lesson("Bai 6", 1,"Lam quen cac so 9,10,11,12.",0);
-        Lesson ls7 = new Lesson("Bai 7", 0,"Lam quen cac so 13,2,3.",0);
-        Lesson ls8 = new Lesson("Bai 8", 1,"Lam quen cac so 1,2,3.",0);
-
-        ArrayLesson.add(ls1);
-        ArrayLesson.add(ls2);
-        ArrayLesson.add(ls3);
-        ArrayLesson.add(ls4);
-        ArrayLesson.add(ls5);
-        ArrayLesson.add(ls6);
-        ArrayLesson.add(ls7);
-        ArrayLesson.add(ls8);
+        ArrayLesson.add(new Lesson("Bài 1", false,"Làm quen các số 1,2,3,4.",0));
+        ArrayLesson.add(new Lesson("Bài 2", false,"Làm quen các số 5,6,7,8.",0));
+        ArrayLesson.add(new Lesson("Bài 3", true,"Làm quen các số 9,10,11,12.",0));
+        ArrayLesson.add(new Lesson("Bài 4", true,"Làm quen các số 13,2,3.",0));
+        ArrayLesson.add(new Lesson("Bài 5", true,"Làm quen các số 1,2,3.",0));
+        ArrayLesson.add(new Lesson("Bài 6", true,"Làm quen các số 1,2,3,4.",0));
+        ArrayLesson.add(new Lesson("Bài 7", true,"Làm quen các số 5,6,7,8.",0));
+        ArrayLesson.add(new Lesson("Bài 8", true,"Làm quen các số 9,10,11,12.",0));
+        ArrayLesson.add(new Lesson("Bài 9", true,"Làm quen các số 13,2,3.",0));
+        ArrayLesson.add(new Lesson("Bài 10", true,"Làm quen các số 1,2,3.",0));
 
     }
 }
