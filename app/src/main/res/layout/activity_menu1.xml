@@ -55,7 +55,7 @@
         android:layout_centerVertical="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/nen1"
+        android:background="@drawable/nentrang"
 
         >
         <Space
@@ -67,7 +67,7 @@
             android:layout_below="@+id/space"
             android:id="@+id/phiatren"
             android:layout_width="match_parent"
-            android:layout_height="110dp"
+            android:layout_height="120dp"
             android:weightSum="3">
 
             <LinearLayout
@@ -88,8 +88,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="BÀI 1"
-                    android:textColor="#fff"
+                    android:text="CHƯƠNG 1"
+                    android:textColor="@color/mauchublue"
                     android:textAlignment="center"
                     android:textSize="20sp"
                     />
@@ -113,8 +113,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="BÀI 2"
-                    android:textColor="#fff"
+                    android:text="CHƯƠNG 2"
+                    android:textColor="@color/mauchublue"
                     android:textAlignment="center"
                     android:textSize="20sp"
                     />
@@ -139,8 +139,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="BÀI 3"
-                    android:textColor="#fff"
+                    android:text="CHƯƠNG 3"
+                    android:textColor="@color/mauchublue"
                     android:textAlignment="center"
                     android:textSize="20sp"
                     />
@@ -150,7 +150,7 @@
         <LinearLayout
             android:layout_below="@+id/phiatren"
             android:layout_width="match_parent"
-            android:layout_height="110dp"
+            android:layout_height="120dp"
 
             >
             <LinearLayout
@@ -171,8 +171,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="BÀI 4"
-                    android:textColor="#fff"
+                    android:text="CHƯƠNG 4"
+                    android:textColor="@color/mauchublue"
                     android:textAlignment="center"
                     android:textSize="20sp"
                     />
@@ -196,8 +196,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="BÀI 5"
-                    android:textColor="#fff"
+                    android:text="CHƯƠNG 5"
+                    android:textColor="@color/mauchublue"
                     android:textAlignment="center"
                     android:textSize="20sp"
                     />
@@ -221,8 +221,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="BÀI 6"
-                    android:textColor="#fff"
+                    android:text="CHƯƠNG 6"
+                    android:textColor="@color/mauchublue"
                     android:textAlignment="center"
                     android:textSize="20sp"
                     />

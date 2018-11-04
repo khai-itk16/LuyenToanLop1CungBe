@@ -71,14 +71,20 @@ public class Bai extends AppCompatActivity implements View.OnClickListener {
         Lesson ls1 = new Lesson("Bai 1", 0,"Lam quen cac so 1,2,3,4.",0);
         Lesson ls2 = new Lesson("Bai 2", 1,"Lam quen cac so 5,6,7,8.",0);
         Lesson ls3 = new Lesson("Bai 3", 1,"Lam quen cac so 9,10,11,12.",0);
-        Lesson ls4 = new Lesson("Bai 4", 1,"Lam quen cac so 13,2,3.",0);
+        Lesson ls4 = new Lesson("Bai 4", 0,"Lam quen cac so 13,2,3.",0);
         Lesson ls5 = new Lesson("Bai 5", 1,"Lam quen cac so 1,2,3.",0);
+        Lesson ls6 = new Lesson("Bai 6", 1,"Lam quen cac so 9,10,11,12.",0);
+        Lesson ls7 = new Lesson("Bai 7", 0,"Lam quen cac so 13,2,3.",0);
+        Lesson ls8 = new Lesson("Bai 8", 1,"Lam quen cac so 1,2,3.",0);
 
         ArrayLesson.add(ls1);
         ArrayLesson.add(ls2);
         ArrayLesson.add(ls3);
         ArrayLesson.add(ls4);
         ArrayLesson.add(ls5);
+        ArrayLesson.add(ls6);
+        ArrayLesson.add(ls7);
+        ArrayLesson.add(ls8);
 
     }
 }

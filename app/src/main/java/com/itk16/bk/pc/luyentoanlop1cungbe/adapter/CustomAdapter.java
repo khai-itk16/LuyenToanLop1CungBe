@@ -58,6 +58,10 @@ public class CustomAdapter extends ArrayAdapter<Lesson> {
         {
             viewHolder.im_lock.setBackgroundResource(R.drawable.lock);
         }
+        else
+        {
+            viewHolder.im_lock.setBackgroundResource(R.drawable.buttonquadau);
+        }
         viewHolder.tv_Title.setText(lesson.getmTenbaihoc());
         viewHolder.bt_hoc.setText("Bắt Đầu");
         viewHolder.bt_hoc.setBackgroundResource(R.drawable.custom_bt_play);
