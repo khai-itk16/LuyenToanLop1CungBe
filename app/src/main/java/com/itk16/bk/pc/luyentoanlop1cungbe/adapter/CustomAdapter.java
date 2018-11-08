@@ -1,6 +1,7 @@
 package com.itk16.bk.pc.luyentoanlop1cungbe.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.itk16.bk.pc.luyentoanlop1cungbe.Bai;
+import com.itk16.bk.pc.luyentoanlop1cungbe.Game_1;
 import com.itk16.bk.pc.luyentoanlop1cungbe.R;
 import com.itk16.bk.pc.luyentoanlop1cungbe.model.Lesson;
 

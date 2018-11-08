@@ -15,7 +15,21 @@ public class Lesson {
         this.sao = sao;
         switch (mNoidung)
         {
-            
+            case 1:
+                fake1();
+                break;
+            case 2:
+                fake2();
+                break;
+            case 3:
+                fake3();
+                break;
+            case 4:
+                fake4();
+                break;
+            case 5:
+                fake5();
+                break;
         }
 
     }
@@ -51,32 +65,52 @@ public class Lesson {
         this.sao = sao;
     }
 
+    public ArrayList<Cau_Hoi> getmLch() {
+        return mLch;
+    }
 
+    public void setmLch(ArrayList<Cau_Hoi> mLch) {
+        this.mLch = mLch;
+    }
 
-    public void fack1()
+    public void fake1()
     {
         mLch= new ArrayList<>();
-        mLch.add(new Cau_Hoi())
+        mLch.add(new Cau_Hoi("Cau hoi thu nhat","dap an 1",true,"dap an 2",
+                false,"dap an 3",false,"dap an 4",false));
+        mLch.add(new Cau_Hoi("Cau hoi thu nhat","dap an 1",true,"dap an 2",
+                false,"dap an 3",false,"dap an 4",false));
+        mLch.add(new Cau_Hoi("Cau hoi thu nhat","dap an 1",true,"dap an 2",
+                false,"dap an 3",false,"dap an 4",false));
+        mLch.add(new Cau_Hoi("Cau hoi thu nhat","dap an 1",true,"dap an 2",
+                false,"dap an 3",false,"dap an 4",false));
+        mLch.add(new Cau_Hoi("Cau hoi thu nhat","dap an 1",true,"dap an 2",
+                false,"dap an 3",false,"dap an 4",false));
+        mLch.add(new Cau_Hoi("Cau hoi thu nhat","dap an 1",true,"dap an 2",
+                false,"dap an 3",false,"dap an 4",false));
+        mLch.add(new Cau_Hoi("Cau hoi thu nhat","dap an 1",true,"dap an 2",
+                false,"dap an 3",false,"dap an 4",false));
+
     }
-    public void fack2()
+    public void fake2()
     {
         mLch= new ArrayList<>();
-        mLch.add(new Cau_Hoi())
+       // mLch.add(new Cau_Hoi())
     }
-    public void fack3()
+    public void fake3()
     {
         mLch= new ArrayList<>();
-        mLch.add(new Cau_Hoi())
+       // mLch.add(new Cau_Hoi())
     }
-    public void fack4()
+    public void fake4()
     {
         mLch= new ArrayList<>();
-        mLch.add(new Cau_Hoi())
+       // mLch.add(new Cau_Hoi())
     }
-    public void fack5()
+    public void fake5()
     {
         mLch= new ArrayList<>();
-        mLch.add(new Cau_Hoi())
+        //mLch.add(new Cau_Hoi())
     }
 
 

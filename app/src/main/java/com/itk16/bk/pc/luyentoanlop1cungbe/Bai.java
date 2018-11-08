@@ -52,6 +52,12 @@ public class Bai extends AppCompatActivity implements View.OnClickListener {
     public void setevent()
     {
         bt_back.setOnClickListener(this);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+        });
     }
 
     @Override
