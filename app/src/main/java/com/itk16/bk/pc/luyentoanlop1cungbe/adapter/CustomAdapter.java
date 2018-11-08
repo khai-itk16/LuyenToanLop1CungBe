@@ -96,7 +96,9 @@ public class CustomAdapter extends ArrayAdapter<Lesson> {
                 }
                 else
                 {
+                    Intent intent= new Intent(context, Game_1.class);
 
+                    context.startActivity(intent);
                 }
             }
         });

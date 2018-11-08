@@ -20,7 +20,7 @@ package="com.itk16.bk.pc.luyentoanlop1cungbe">
     <activity android:name=".Menu" android:screenOrientation="landscape"></activity>
     <activity android:name=".Menu1" android:screenOrientation="landscape"></activity>
     <activity android:name=".Bai" android:screenOrientation="landscape"></activity>
-    <activity android:name=".Game_1"></activity>
+    <activity android:name=".Game_1" android:screenOrientation="landscape"></activity>
 </application>
 
 </manifest>

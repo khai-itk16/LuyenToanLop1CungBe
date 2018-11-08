@@ -53,13 +53,24 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:weightSum="6">
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/bang"
             android:layout_weight="2">
 
-        </LinearLayout>
+            <TextView
+                android:id="@+id/tv_Ch"
+                android:layout_width="338dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:textColor="#fff"
+                android:text="Cau hoi"
+                android:textSize="@dimen/text_size"/>
+
+        </RelativeLayout>
         <LinearLayout
             android:layout_gravity="center"
             android:layout_width="wrap_content"
@@ -67,18 +78,22 @@
             android:layout_weight="4"
             android:orientation="horizontal">
             <Button
+                android:id="@+id/bt_da1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="A"/>
             <Button
+                android:id="@+id/bt_da2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="B"/>
             <Button
+                android:id="@+id/bt_da3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="C"/>
             <Button
+                android:id="@+id/bt_da4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="D"/>
