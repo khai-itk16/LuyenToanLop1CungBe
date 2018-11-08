@@ -33,7 +33,6 @@ public class Bai extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         bai = getIntent().getIntExtra("bai", -1);
         setContentView((Integer)map.get(bai));
         loadFackdata();
@@ -67,16 +66,12 @@ public class Bai extends AppCompatActivity implements View.OnClickListener {
     }
     public void loadFackdata()
     {
-        ArrayLesson.add(new Lesson("Bài 1", false,"Làm quen các số 1,2,3,4.",2));
-        ArrayLesson.add(new Lesson("Bài 2", false,"Làm quen các số 5,6,7,8.",1));
-        ArrayLesson.add(new Lesson("Bài 3", false,"Làm quen các số 9,10,11,12.",0));
-        ArrayLesson.add(new Lesson("Bài 4", true,"Làm quen các số 13,2,3.",0));
-        ArrayLesson.add(new Lesson("Bài 5", true,"Làm quen các số 1,2,3.",0));
-        ArrayLesson.add(new Lesson("Bài 6", true,"Làm quen các số 1,2,3,4.",0));
-        ArrayLesson.add(new Lesson("Bài 7", true,"Làm quen các số 5,6,7,8.",0));
-        ArrayLesson.add(new Lesson("Bài 8", true,"Làm quen các số 9,10,11,12.",0));
-        ArrayLesson.add(new Lesson("Bài 9", true,"Làm quen các số 13,2,3.",0));
-        ArrayLesson.add(new Lesson("Bài 10", true,"Làm quen các số 1,2,3.",0));
+        ArrayLesson.add(new Lesson("Bài 1", false,1,2));
+        ArrayLesson.add(new Lesson("Bài 2", false,2,1));
+        ArrayLesson.add(new Lesson("Bài 3", false,3,0));
+        ArrayLesson.add(new Lesson("Bài 4", true,4,0));
+        ArrayLesson.add(new Lesson("Bài 5", true,5,0));
+
 
     }
 }

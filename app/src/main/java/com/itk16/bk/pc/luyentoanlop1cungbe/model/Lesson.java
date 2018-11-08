@@ -1,15 +1,23 @@
 package com.itk16.bk.pc.luyentoanlop1cungbe.model;
 
+import java.util.ArrayList;
+
 public class Lesson {
     private String mTenbaihoc;
     private boolean mLock;
-    private String mNoidung;
+    private int mNoidung;
     private int sao ;
-    public Lesson(String mTenbaihoc, boolean mLock, String mNoidung, int sao) {
+    private ArrayList<Cau_Hoi> mLch;
+    public Lesson(String mTenbaihoc, boolean mLock, int mNoidung, int sao) {
         this.mTenbaihoc = mTenbaihoc;
         this.mLock = mLock;
         this.mNoidung = mNoidung;
         this.sao = sao;
+        switch (mNoidung)
+        {
+            
+        }
+
     }
 
     public String getmTenbaihoc() {
@@ -19,7 +27,6 @@ public class Lesson {
     public void setmTenbaihoc(String mTenbaihoc) {
         this.mTenbaihoc = mTenbaihoc;
     }
-
     public boolean getmLock() {
         return mLock;
     }
@@ -28,11 +35,11 @@ public class Lesson {
         this.mLock = mLock;
     }
 
-    public String getmNoidung() {
+    public int getmNoidung() {
         return mNoidung;
     }
 
-    public void setmNoidung(String mNoidung) {
+    public void setmNoidung(int mNoidung) {
         this.mNoidung = mNoidung;
     }
 
@@ -43,4 +50,37 @@ public class Lesson {
     public void setSao(int sao) {
         this.sao = sao;
     }
+
+
+
+    public void fack1()
+    {
+        mLch= new ArrayList<>();
+        mLch.add(new Cau_Hoi())
+    }
+    public void fack2()
+    {
+        mLch= new ArrayList<>();
+        mLch.add(new Cau_Hoi())
+    }
+    public void fack3()
+    {
+        mLch= new ArrayList<>();
+        mLch.add(new Cau_Hoi())
+    }
+    public void fack4()
+    {
+        mLch= new ArrayList<>();
+        mLch.add(new Cau_Hoi())
+    }
+    public void fack5()
+    {
+        mLch= new ArrayList<>();
+        mLch.add(new Cau_Hoi())
+    }
+
+
+
+
+
 }

@@ -92,6 +92,10 @@ public class CustomAdapter extends ArrayAdapter<Lesson> {
                 if(lesson.getmLock()){
                     Toast.makeText(context, "Bạn chưa được phép chơi màn này!", Toast.LENGTH_SHORT).show();
                 }
+                else
+                {
+
+                }
             }
         });
         return convertView;
