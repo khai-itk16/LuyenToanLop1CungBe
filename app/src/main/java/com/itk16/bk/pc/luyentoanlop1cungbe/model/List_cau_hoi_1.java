@@ -2,7 +2,7 @@ package com.itk16.bk.pc.luyentoanlop1cungbe.model;
 
 import java.util.ArrayList;
 
-public class List_cau_hoi {
+public class List_cau_hoi_1 {
     private ArrayList<Cau_Hoi> mLch;
     public ArrayList<Cau_Hoi> getmLch() {
         return mLch;
@@ -11,28 +11,28 @@ public class List_cau_hoi {
         this.mLch = mLch;
     }
 
-    public List_cau_hoi(int lc) {
+    public List_cau_hoi_1(int lc) {
         switch (lc)
         {
             case 1:
-                fake1();
+                chuong1();
                 break;
             case 2:
-                fake2();
+                chuong2();
                 break;
             case 3:
-                fake3();
+                chuong3();
                 break;
             case 4:
-                fake4();
+                chuong4();
                 break;
             case 5:
-                fake5();
+                chuong5();
                 break;
 
         }
     }
-    public void fake1()
+    public void chuong1()
     {
         this.mLch= new ArrayList<>();
         mLch.add(new Cau_Hoi("Cau hoi thu nhat","dap an 1",true,"dap an 2",
@@ -51,22 +51,22 @@ public class List_cau_hoi {
                 false,"dap an 3",false,"dap an 4",false));
 
     }
-    public void fake2()
+    public void chuong2()
     {
         mLch= new ArrayList<>();
         // mLch.add(new Cau_Hoi())
     }
-    public void fake3()
+    public void chuong3()
     {
         mLch= new ArrayList<>();
         // mLch.add(new Cau_Hoi())
     }
-    public void fake4()
+    public void chuong4()
     {
         mLch= new ArrayList<>();
         // mLch.add(new Cau_Hoi())
     }
-    public void fake5()
+    public void chuong5()
     {
         mLch= new ArrayList<>();
         //mLch.add(new Cau_Hoi())

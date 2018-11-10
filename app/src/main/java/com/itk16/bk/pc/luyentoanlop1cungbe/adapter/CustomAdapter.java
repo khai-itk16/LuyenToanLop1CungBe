@@ -32,6 +32,7 @@ public class CustomAdapter extends ArrayAdapter<Lesson> {
     private int Resource;
     private final String TAG = getClass().getSimpleName();
     private ArrayList<Lesson> mArray;
+    private int chuong;
 
     public CustomAdapter(@NonNull Context context, int resource, @NonNull ArrayList<Lesson> objects) {
         super(context, resource, objects);
@@ -97,7 +98,6 @@ public class CustomAdapter extends ArrayAdapter<Lesson> {
                 else
                 {
                     Intent intent= new Intent(context, Game_1.class);
-
                     context.startActivity(intent);
                 }
             }
