@@ -1,5 +1,6 @@
 package com.itk16.bk.pc.luyentoanlop1cungbe;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -22,6 +23,7 @@ public class Bai extends AppCompatActivity implements View.OnClickListener {
     private static HashMap map = new HashMap<Integer, Integer>();
     private ArrayList<Lesson> ArrayLesson=new ArrayList<>();
 
+
     static {
         map.put(1, R.layout.activity_bai1);
         map.put(2, R.layout.activity_bai2);
@@ -41,6 +43,16 @@ public class Bai extends AppCompatActivity implements View.OnClickListener {
         CustomAdapter customAdapter = new CustomAdapter(Bai.this,R.layout.item,ArrayLesson, bai);
         listView.setAdapter(customAdapter);
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode == 1) {
+            if(resultCode == 1){
+                int sao = data.getIntExtra("sao",-1);
+            }
+        }
     }
 
     public void khaibao()
@@ -75,3 +87,4 @@ public class Bai extends AppCompatActivity implements View.OnClickListener {
 
     }
 }
+
