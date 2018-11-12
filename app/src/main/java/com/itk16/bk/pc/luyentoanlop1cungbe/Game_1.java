@@ -23,9 +23,8 @@ public class Game_1 extends AppCompatActivity implements View.OnClickListener{
     private int vt=0;
     private int sao=0;
     private int status=0;
-    private int sodapansai=0;
+    private int check=0;
     CountDownTimer timer;
-    int[] k= new int[]{0, 0, 0, 0};
       @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,12 +60,8 @@ public class Game_1 extends AppCompatActivity implements View.OnClickListener{
     public void kecha() {
         if (vt < mLch.getmLch().size()){
             Cau_Hoi ch1 = mLch.getmLch().get(vt);
-        sodapansai = 0;
-        status=0;
-        for (int i= 0; i< k.length; i++)
-        {
-            k[i]=0;
-        }
+        status = 0;
+        check=0;
         bt_Da1.setBackgroundResource(R.drawable.dapan);
         bt_Da2.setBackgroundResource(R.drawable.dapan);
         bt_Da3.setBackgroundResource(R.drawable.dapan);
@@ -101,18 +96,17 @@ public class Game_1 extends AppCompatActivity implements View.OnClickListener{
                 if(mLch.getmLch().get(vt).getD().get(0).isT())
                 {
                    bt_Da1.setBackgroundResource(R.drawable.dung);
-                 if(k[0]==0)
+                 if(status==0)
                  {
-                     if(sodapansai==0) sao+=1;
+                     check=1;
+                     sao+=1;
                      status=1;
-                     k[0]=1;
                  }
                   timer.cancel();
                 }
                 else
                 {
                     bt_Da1.setBackgroundResource(R.drawable.sai);
-                    sodapansai+=1;
                     status=1;
                 }
                 break;
@@ -120,18 +114,17 @@ public class Game_1 extends AppCompatActivity implements View.OnClickListener{
                 if(mLch.getmLch().get(vt).getD().get(1).isT())
                 {
                     bt_Da2.setBackgroundResource(R.drawable.dung);
-                    if(k[1]==0)
+                    if(status==0)
                     {
-                        if(sodapansai==0) sao+=1;
+                        check=1;
+                        sao+=1;
                         status=1;
-                        k[1]=1;
                     }
                     timer.cancel();
                 }
                 else
                 {
                     bt_Da2.setBackgroundResource(R.drawable.sai);
-                    sodapansai+=1;
                     status=1;
 
                 }
@@ -140,18 +133,17 @@ public class Game_1 extends AppCompatActivity implements View.OnClickListener{
                 if(mLch.getmLch().get(vt).getD().get(2).isT())
                 {
                     bt_Da3.setBackgroundResource(R.drawable.dung);
-                    if(k[2]==0)
-                    {
-                        if(sodapansai==0) sao+=1;
-                        status=1;
-                        k[2]=1;
-                    }
+                        if(status==0)
+                        {
+                            check=1;
+                            sao+=1;
+                            status=1;
+                        }
                     timer.cancel();
                 }
                 else
                 {
                     bt_Da3.setBackgroundResource(R.drawable.sai);
-                    sodapansai+=1;
                     status=1;
                 }
                 break;
@@ -159,27 +151,26 @@ public class Game_1 extends AppCompatActivity implements View.OnClickListener{
                 if(mLch.getmLch().get(vt).getD().get(3).isT())
                 {
                     bt_Da4.setBackgroundResource(R.drawable.dung);
-                    if(k[3]==0)
+                    if(status==0)
                     {
-                        if(sodapansai==0) sao+=1;
+                        check=1;
+                        sao+=1;
                         status=1;
-                        k[3]=1;
                     }
                     timer.cancel();
                 }
                 else
                 {
                     bt_Da4.setBackgroundResource(R.drawable.sai);
-                    sodapansai+=1;
                     status=1;
                 }
                 break;
             case R.id.next:
-
+                timer.cancel();
                if(status==1)
-               {vt+=1;
-                if(sodapansai==0) sao+=1;
-                kecha();
+               {
+                    vt+=1;
+                    kecha();
                }else Toast.makeText(this, "ban phai chon dap an truoc khi tiep tuc",Toast.LENGTH_SHORT).show();
 
                 break;

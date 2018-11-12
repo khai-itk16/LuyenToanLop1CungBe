@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.itk16.bk.pc.luyentoanlop1cungbe.adapter.Custom_GridView;
 import com.itk16.bk.pc.luyentoanlop1cungbe.model.Item_anh;
@@ -27,6 +28,10 @@ public class Game_3 extends AppCompatActivity implements View.OnClickListener{
     int[] Da={0,0,0,0};//mang dap an
     int da;//vi tri dap an dung
     CountDownTimer timer;
+    int status;
+    int sao;
+    int check;
+    int n=0;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,6 +82,8 @@ public class Game_3 extends AppCompatActivity implements View.OnClickListener{
         bt_Da2.setText(Da[1]+"");
         bt_Da3.setText(Da[2]+"");
         bt_Da4.setText(Da[3]+"");
+        status=0;
+        check=0;
         timer= new CountDownTimer(15000,1000) {
             @Override
             public void onTick(long millisUntilFinished) {
@@ -119,41 +126,89 @@ public class Game_3 extends AppCompatActivity implements View.OnClickListener{
                 if(Da[0]==k)
                 {
                     bt_Da1.setBackgroundResource(R.drawable.dung);
+                    if(status==0)
+                    {
+                        check= 1;
+                        sao+=1;
+                        status=1;
+
+                    }
                     timer.cancel();
 
                 }
-                else bt_Da1.setBackgroundResource(R.drawable.sai);
+                else{
+                    bt_Da1.setBackgroundResource(R.drawable.sai);
+                    status=1;
+                }
+
                 break;
             case R.id.bt_da2:
                 if(Da[1]==k)
                 {
                     bt_Da2.setBackgroundResource(R.drawable.dung);
+                    if(status==0)
+                    {
+                        check= 1;
+                        sao+=1;
+                        status=1;
+
+                    }
                     timer.cancel();
 
                 }
-                else bt_Da2.setBackgroundResource(R.drawable.sai);
+                else {
+                    bt_Da2.setBackgroundResource(R.drawable.sai);
+                    status=1;
+                }
                 break;
             case R.id.bt_da3:
                 if(Da[2]==k)
                 {
                     bt_Da3.setBackgroundResource(R.drawable.dung);
+                    if(status==0)
+                    {
+                        check= 1;
+                        sao+=1;
+                        status=1;
+
+                    }
                     timer.cancel();
 
                 }
-                else bt_Da3.setBackgroundResource(R.drawable.sai);
+                else {
+                    bt_Da3.setBackgroundResource(R.drawable.sai);
+                    status=1;
+                }
                 break;
             case R.id.bt_da4:
                 if(Da[3]==k)
                 {
                     bt_Da4.setBackgroundResource(R.drawable.dung);
+                    if(status==0)
+                    {
+                        check= 1;
+                        sao+=1;
+                        status=1;
+
+                    }
                     timer.cancel();
 
                 }
-                else bt_Da4.setBackgroundResource(R.drawable.sai);
+                else {
+                    bt_Da4.setBackgroundResource(R.drawable.sai);
+                    status=1;
+                }
                 break;
             case R.id.next:
                 timer.cancel();
-                kecha();
+                if(status==1)
+                {
+                    if(n<10)
+                    {n++;
+                    kecha();
+                    }else Toast.makeText(this, "Bạn đã hoàn thành với "+sao+" đáp án đúng",Toast.LENGTH_SHORT).show();
+                }else Toast.makeText(this, "Bạn phải chọn ít nhất 1 đáp án trước khi tiếp tục",Toast.LENGTH_SHORT).show();
+
                 break;
         }
 

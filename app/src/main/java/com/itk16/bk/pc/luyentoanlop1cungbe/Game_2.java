@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -18,7 +19,11 @@ public class Game_2 extends AppCompatActivity implements View.OnClickListener{
     private String v1, v2;
     private int n1, n2;
     int d;
+    int status;//da chon 1 dap an
+    int sao=0;//tinh so cau dung
+    int check;//kiem tra dung sai
     CountDownTimer timer;
+    int n=0;
 
 
     @Override
@@ -51,6 +56,8 @@ public class Game_2 extends AppCompatActivity implements View.OnClickListener{
     }
     public void kecha()
     {
+        status=0;
+        check=0;
         random(2);
         bt_behon.setBackgroundResource(R.drawable.be);
         bt_lonhon.setBackgroundResource(R.drawable.lon);
@@ -80,30 +87,64 @@ public class Game_2 extends AppCompatActivity implements View.OnClickListener{
                 if(n1<n2)
                 {
                     bt_behon.setBackgroundResource(R.drawable.bedung);
+                    if(status==0)
+                    {
+                        sao+=1;
+                        check=1;
+                        status=1;
+                    }
                     timer.cancel();
                 }
-                else bt_behon.setBackgroundResource(R.drawable.besai);
+                else
+                {
+                    bt_behon.setBackgroundResource(R.drawable.besai);
+                    status=1;
+                }
                 break;
             case R.id.bt_lonhon:
                 if(n1>n2)
                 {
                     bt_lonhon.setBackgroundResource(R.drawable.londung);
+                    if(status==0)
+                    {
+                        sao+=1;
+                        check=1;
+                        status=1;
+                    }
                     timer.cancel();
                 }
-                else bt_lonhon.setBackgroundResource(R.drawable.lonsai);
+                else {
+                    bt_lonhon.setBackgroundResource(R.drawable.lonsai);
+                    status=1;
+                }
                 break;
             case R.id.bt_bang:
                 if(n1==n2)
                 {
                     bt_bang.setBackgroundResource(R.drawable.bangdung);
+                    if(status==0)
+                    {
+                        sao+=1;
+                        check=1;
+                        status=1;
+                    }
                     timer.cancel();
                 }
-                else bt_bang.setBackgroundResource(R.drawable.bangsai);
+                else {
+                    bt_bang.setBackgroundResource(R.drawable.bangsai);
+                    status=1;
+                }
                 break;
             case R.id.next:
                 timer.cancel();
-                kecha();
-                break;
+               if(status==1) {
+                   if (n < 10) {
+                       kecha();
+                       n++;
+                   } else
+                       Toast.makeText(this, "Bạn đã hoàn thành bài với " + sao + " dap an dung!", Toast.LENGTH_SHORT).show();
+                   }else Toast.makeText(this, "Bạn phải chon ít nhất một đáp án trước khi tiếp tục!",Toast.LENGTH_SHORT).show();
+               break;
 
         }
     }
@@ -136,7 +177,7 @@ public class Game_2 extends AppCompatActivity implements View.OnClickListener{
                     int i1, i2;
                     n1=rd.nextInt(9)+1;
                     n2=rd.nextInt(9)+1;
-                    i1= rd.nextInt(n1);
+                    i1= rd.nextInt(n2);
                     i2=n2-i1;
                     v2=i1+" + "+i2+"";
                     v1=n1+"";
