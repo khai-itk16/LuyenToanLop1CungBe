@@ -38,7 +38,7 @@ public class Bai extends AppCompatActivity implements View.OnClickListener {
         loadFackdata();
         khaibao();
         setevent();
-        CustomAdapter customAdapter = new CustomAdapter(Bai.this,R.layout.item,ArrayLesson);
+        CustomAdapter customAdapter = new CustomAdapter(Bai.this,R.layout.item,ArrayLesson, bai);
         listView.setAdapter(customAdapter);
 
     }
@@ -67,8 +67,8 @@ public class Bai extends AppCompatActivity implements View.OnClickListener {
     public void loadFackdata()
     {
         ArrayLesson.add(new Lesson("Bài 1", false,1,0));
-        ArrayLesson.add(new Lesson("Bài 2", true,2,0));
-        ArrayLesson.add(new Lesson("Bài 3", true,3,0));
+        ArrayLesson.add(new Lesson("Bài 2", false,2,0));
+        ArrayLesson.add(new Lesson("Bài 3", false,3,0));
         ArrayLesson.add(new Lesson("Bài 4", true,4,0));
         ArrayLesson.add(new Lesson("Bài 5", true,5,0));
 

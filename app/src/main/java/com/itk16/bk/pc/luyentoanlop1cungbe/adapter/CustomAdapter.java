@@ -18,6 +18,8 @@ import android.widget.Toast;
 
 import com.itk16.bk.pc.luyentoanlop1cungbe.Bai;
 import com.itk16.bk.pc.luyentoanlop1cungbe.Game_1;
+import com.itk16.bk.pc.luyentoanlop1cungbe.Game_2;
+import com.itk16.bk.pc.luyentoanlop1cungbe.Game_3;
 import com.itk16.bk.pc.luyentoanlop1cungbe.R;
 import com.itk16.bk.pc.luyentoanlop1cungbe.model.Lesson;
 
@@ -34,11 +36,12 @@ public class CustomAdapter extends ArrayAdapter<Lesson> {
     private ArrayList<Lesson> mArray;
     private int chuong;
 
-    public CustomAdapter(@NonNull Context context, int resource, @NonNull ArrayList<Lesson> objects) {
+    public CustomAdapter(@NonNull Context context, int resource, @NonNull ArrayList<Lesson> objects, int chuong) {
         super(context, resource, objects);
         this.context = context;
         this.Resource = resource;
         this.mArray = objects;
+        this.chuong = chuong;
 
     }
 
@@ -97,8 +100,22 @@ public class CustomAdapter extends ArrayAdapter<Lesson> {
                 }
                 else
                 {
-                    Intent intent= new Intent(context, Game_1.class);
-                    context.startActivity(intent);
+                    switch (lesson.getmNoidung()) {
+                        case 1:
+                            Intent intent = new Intent(context, Game_1.class);
+                            intent.putExtra("chuong", chuong);
+                            context.startActivity(intent);
+                            break;
+                        case 2:
+                            Intent intent1 = new Intent(context, Game_2.class);
+                            context.startActivity(intent1);
+                            break;
+                        case 3:
+                            Intent intent2 = new Intent(context, Game_3.class);
+                            context.startActivity(intent2);
+                            break;
+
+                    }
                 }
             }
         });

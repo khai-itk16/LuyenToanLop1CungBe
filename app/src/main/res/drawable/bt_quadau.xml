@@ -7,5 +7,5 @@
         android:drawable="@drawable/buttonquadau_press"
         android:state_focused="true"/>
     <item
-        android:drawable="@drawable/buttonquadau"/>
+        android:drawable="@drawable/quadau"/>
 </selector>

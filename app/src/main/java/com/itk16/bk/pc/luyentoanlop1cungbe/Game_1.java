@@ -1,5 +1,6 @@
 package com.itk16.bk.pc.luyentoanlop1cungbe;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -35,7 +36,7 @@ public class Game_1 extends AppCompatActivity implements View.OnClickListener{
 
     public void init()
     {
-        mLch= new List_cau_hoi_1(1);
+        mLch= new List_cau_hoi_1(lc);
         bt_next=(Button)findViewById(R.id.next) ;
         bt_Da1= (Button)findViewById(R.id.bt_da1);
         bt_Da2= (Button)findViewById(R.id.bt_da2);
@@ -50,6 +51,10 @@ public class Game_1 extends AppCompatActivity implements View.OnClickListener{
         bt_Da3.setOnClickListener(this);
         bt_Da4.setOnClickListener(this);
         bt_next.setOnClickListener(this);
+
+        Intent intent = getIntent();
+        lc = intent.getIntExtra("chuong", -1);
+
     }
     public void kecha() {
         if (vt < mLch.getmLch().size()){
@@ -60,10 +65,10 @@ public class Game_1 extends AppCompatActivity implements View.OnClickListener{
         {
             k[i]=0;
         }
-        bt_Da1.setBackgroundColor(Color.GRAY);
-        bt_Da2.setBackgroundColor(Color.GRAY);
-        bt_Da3.setBackgroundColor(Color.GRAY);
-        bt_Da4.setBackgroundColor(Color.GRAY);
+        bt_Da1.setBackgroundResource(R.drawable.dapan);
+        bt_Da2.setBackgroundResource(R.drawable.dapan);
+        bt_Da3.setBackgroundResource(R.drawable.dapan);
+        bt_Da4.setBackgroundResource(R.drawable.dapan);
         bt_Da1.setText(ch1.getD().get(0).getD());
         bt_Da2.setText(ch1.getD().get(1).getD());
         bt_Da3.setText(ch1.getD().get(2).getD());
@@ -93,7 +98,7 @@ public class Game_1 extends AppCompatActivity implements View.OnClickListener{
             case R.id.bt_da1:
                 if(mLch.getmLch().get(vt).getD().get(0).isT())
                 {
-                    bt_Da1.setBackgroundColor(Color.GREEN);
+                   bt_Da1.setBackgroundResource(R.drawable.dung);
                  if(k[0]==0)
                  {
                      if(sodapansai==0) sao+=1;
@@ -104,7 +109,7 @@ public class Game_1 extends AppCompatActivity implements View.OnClickListener{
                 }
                 else
                 {
-                    bt_Da1.setBackgroundColor(Color.RED);
+                    bt_Da1.setBackgroundResource(R.drawable.sai);
                     sodapansai+=1;
                     status=1;
                 }
@@ -112,7 +117,7 @@ public class Game_1 extends AppCompatActivity implements View.OnClickListener{
             case R.id.bt_da2:
                 if(mLch.getmLch().get(vt).getD().get(1).isT())
                 {
-                    bt_Da2.setBackgroundColor(Color.GREEN);
+                    bt_Da2.setBackgroundResource(R.drawable.dung);
                     if(k[1]==0)
                     {
                         if(sodapansai==0) sao+=1;
@@ -123,7 +128,7 @@ public class Game_1 extends AppCompatActivity implements View.OnClickListener{
                 }
                 else
                 {
-                    bt_Da2.setBackgroundColor(Color.RED);
+                    bt_Da2.setBackgroundResource(R.drawable.sai);
                     sodapansai+=1;
                     status=1;
 
@@ -132,7 +137,7 @@ public class Game_1 extends AppCompatActivity implements View.OnClickListener{
             case R.id.bt_da3:
                 if(mLch.getmLch().get(vt).getD().get(2).isT())
                 {
-                    bt_Da3.setBackgroundColor(Color.GREEN);
+                    bt_Da3.setBackgroundResource(R.drawable.dung);
                     if(k[2]==0)
                     {
                         if(sodapansai==0) sao+=1;
@@ -143,7 +148,7 @@ public class Game_1 extends AppCompatActivity implements View.OnClickListener{
                 }
                 else
                 {
-                    bt_Da3.setBackgroundColor(Color.RED);
+                    bt_Da3.setBackgroundResource(R.drawable.sai);
                     sodapansai+=1;
                     status=1;
                 }
@@ -151,7 +156,7 @@ public class Game_1 extends AppCompatActivity implements View.OnClickListener{
             case R.id.bt_da4:
                 if(mLch.getmLch().get(vt).getD().get(3).isT())
                 {
-                    bt_Da4.setBackgroundColor(Color.GREEN);
+                    bt_Da4.setBackgroundResource(R.drawable.dung);
                     if(k[3]==0)
                     {
                         if(sodapansai==0) sao+=1;
@@ -162,7 +167,7 @@ public class Game_1 extends AppCompatActivity implements View.OnClickListener{
                 }
                 else
                 {
-                    bt_Da4.setBackgroundColor(Color.RED);
+                    bt_Da4.setBackgroundResource(R.drawable.sai);
                     sodapansai+=1;
                     status=1;
                 }

@@ -54,12 +54,38 @@ public class List_cau_hoi_1 {
     public void chuong2()
     {
         mLch= new ArrayList<>();
-        // mLch.add(new Cau_Hoi())
+        mLch.add(new Cau_Hoi("chuong 2","dap an 1",true,"dap an 2",
+                false,"dap an 3",false,"dap an 4",false));
+        mLch.add(new Cau_Hoi("Cau hoi thu nhat","dap an 1",true,"dap an 2",
+                false,"dap an 3",false,"dap an 4",false));
+        mLch.add(new Cau_Hoi("Cau hoi thu nhat","dap an 1",true,"dap an 2",
+                false,"dap an 3",false,"dap an 4",false));
+        mLch.add(new Cau_Hoi("Cau hoi thu nhat","dap an 1",true,"dap an 2",
+                false,"dap an 3",false,"dap an 4",false));
+        mLch.add(new Cau_Hoi("Cau hoi thu nhat","dap an 1",true,"dap an 2",
+                false,"dap an 3",false,"dap an 4",false));
+        mLch.add(new Cau_Hoi("Cau hoi thu nhat","dap an 1",true,"dap an 2",
+                false,"dap an 3",false,"dap an 4",false));
+        mLch.add(new Cau_Hoi("Cau hoi thu nhat","dap an 1",true,"dap an 2",
+                false,"dap an 3",false,"dap an 4",false));
     }
     public void chuong3()
     {
         mLch= new ArrayList<>();
-        // mLch.add(new Cau_Hoi())
+        mLch.add(new Cau_Hoi("Chuong 3","dap an 1",true,"dap an 2",
+                false,"dap an 3",false,"dap an 4",false));
+        mLch.add(new Cau_Hoi("Cau hoi thu nhat","dap an 1",true,"dap an 2",
+                false,"dap an 3",false,"dap an 4",false));
+        mLch.add(new Cau_Hoi("Cau hoi thu nhat","dap an 1",true,"dap an 2",
+                false,"dap an 3",false,"dap an 4",false));
+        mLch.add(new Cau_Hoi("Cau hoi thu nhat","dap an 1",true,"dap an 2",
+                false,"dap an 3",false,"dap an 4",false));
+        mLch.add(new Cau_Hoi("Cau hoi thu nhat","dap an 1",true,"dap an 2",
+                false,"dap an 3",false,"dap an 4",false));
+        mLch.add(new Cau_Hoi("Cau hoi thu nhat","dap an 1",true,"dap an 2",
+                false,"dap an 3",false,"dap an 4",false));
+        mLch.add(new Cau_Hoi("Cau hoi thu nhat","dap an 1",true,"dap an 2",
+                false,"dap an 3",false,"dap an 4",false));
     }
     public void chuong4()
     {

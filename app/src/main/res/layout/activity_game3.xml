@@ -10,7 +10,7 @@
         android:id="@+id/hang1"
         android:layout_width="match_parent"
         android:layout_height="65dp"
-       >
+        >
 
 
         <Button
@@ -53,37 +53,45 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="6">
+        android:background="@drawable/bang"
+        android:weightSum="7">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/bang"
             android:layout_weight="2">
 
-            <TextView
-                android:id="@+id/tv_Ch"
-                android:layout_width="338dp"
+            <GridView
+                android:id="@+id/gr_v"
+                android:numColumns="8"
+                android:layout_width="400dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:gravity="center"
-                android:textColor="#fff"
-                android:text="Cau hoi"
-                android:textSize="@dimen/text_size"/>
+              />
 
         </RelativeLayout>
+        <TextView
+            android:id="@+id/tv_Ch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="cau hoi"
+            android:textSize="@dimen/text_size"
+            android:layout_gravity="center_horizontal"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_weight="4">
+            android:layout_weight="5">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-               android:layout_centerHorizontal="true">
+                android:layout_centerHorizontal="true">
 
                 <Button
                     android:id="@+id/bt_da1"
