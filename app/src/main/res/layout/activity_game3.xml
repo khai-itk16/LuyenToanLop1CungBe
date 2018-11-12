@@ -85,6 +85,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
+            android:paddingBottom="10dp"
             android:layout_weight="5">
 
             <LinearLayout
@@ -92,6 +93,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_centerHorizontal="true">
+
 
                 <Button
                     android:id="@+id/bt_da1"

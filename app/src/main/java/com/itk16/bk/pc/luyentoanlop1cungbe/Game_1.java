@@ -36,6 +36,9 @@ public class Game_1 extends AppCompatActivity implements View.OnClickListener{
 
     public void init()
     {
+
+        Intent intent = getIntent();
+        lc = intent.getIntExtra("chuong", -1);
         mLch= new List_cau_hoi_1(lc);
         bt_next=(Button)findViewById(R.id.next) ;
         bt_Da1= (Button)findViewById(R.id.bt_da1);
@@ -52,8 +55,7 @@ public class Game_1 extends AppCompatActivity implements View.OnClickListener{
         bt_Da4.setOnClickListener(this);
         bt_next.setOnClickListener(this);
 
-        Intent intent = getIntent();
-        lc = intent.getIntExtra("chuong", -1);
+
 
     }
     public void kecha() {
