@@ -19,7 +19,7 @@ import java.util.HashMap;
 public class Bai extends AppCompatActivity implements View.OnClickListener {
     private Button bt_back;
     private ListView listView;
-    private Integer bai;
+    private Integer chuong;
     private static HashMap map = new HashMap<Integer, Integer>();
     private ArrayList<Lesson> ArrayLesson=new ArrayList<>();
 
@@ -35,22 +35,26 @@ public class Bai extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bai = getIntent().getIntExtra("bai", -1);
-        setContentView((Integer)map.get(bai));
+        chuong = getIntent().getIntExtra("chuong", -1);
+        setContentView((Integer)map.get(chuong));
         loadFackdata();
         khaibao();
         setevent();
-        CustomAdapter customAdapter = new CustomAdapter(Bai.this,R.layout.item,ArrayLesson, bai);
+        CustomAdapter customAdapter = new CustomAdapter(Bai.this,R.layout.item,ArrayLesson, chuong);
         listView.setAdapter(customAdapter);
 
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
         if (requestCode == 1) {
             if(resultCode == 1){
                 int sao = data.getIntExtra("sao",-1);
+                Toast.makeText(this, "1111111111", Toast.LENGTH_SHORT).show();
+            }
+            if(resultCode == 2){
+                int sao = data.getIntExtra("sao",-1);
+                Toast.makeText(this, "22222222", Toast.LENGTH_SHORT).show();
             }
         }
     }

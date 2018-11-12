@@ -56,9 +56,9 @@ public class Menu1 extends AppCompatActivity implements View.OnClickListener{
             return;
         }
 
-        int bai = (int)v.getTag();
+        int chuong = (int)v.getTag();
         Intent intent =new Intent(Menu1.this, Bai.class);
-        intent.putExtra("bai", bai);
+        intent.putExtra("chuong", chuong);
         startActivity(intent);
     }
 

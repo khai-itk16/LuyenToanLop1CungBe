@@ -102,19 +102,20 @@ public class CustomAdapter extends ArrayAdapter<Lesson> {
                 {
                     switch (lesson.getmNoidung()) {
                         case 1:
-                            Intent intent = new Intent(context, Game_1.class);
-                            intent.putExtra("chuong", chuong);
-                            context.startActivity(intent);
+                            Intent intent1 = new Intent(context, Game_1.class);
+                            intent1.putExtra("chuong", chuong);
+                            ((Bai)context).startActivityForResult(intent1, 1);
                             break;
                         case 2:
-                            Intent intent1 = new Intent(context, Game_2.class);
-                            context.startActivity(intent1);
+                            Intent intent2 = new Intent(context, Game_2.class);
+                            intent2.putExtra("chuong", chuong);
+                            ((Bai)context).startActivityForResult(intent2, 1);
                             break;
                         case 3:
-                            Intent intent2 = new Intent(context, Game_3.class);
-                            context.startActivity(intent2);
+                            Intent intent3 = new Intent(context, Game_3.class);
+                            intent3.putExtra("chuong", chuong);
+                            ((Bai)context).startActivityForResult(intent3, 1);
                             break;
-
                     }
                 }
             }
