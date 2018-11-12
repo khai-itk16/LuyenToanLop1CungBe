@@ -1,8 +1,11 @@
 package com.itk16.bk.pc.luyentoanlop1cungbe;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -18,9 +21,11 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Game_3 extends AppCompatActivity implements View.OnClickListener{
+    private int lc;
     private Button bt_Da1,bt_Da2, bt_Da3, bt_Da4,bt_next, bt_back, bt_pause;
     private TextView tv_countdown,tv_Ch;
     private GridView gr_v;
+    private Intent intent;
     private List_Item_Anh LITA;//danh sach anh
     int k;//bien k dung de tao bien ramdom tuong ung voi mot con so trong bai hoc
     int a;// a dung de random ra mot anh bat ky trong LITA
@@ -32,6 +37,7 @@ public class Game_3 extends AppCompatActivity implements View.OnClickListener{
     int sao;
     int check;
     int n=0;
+    int N;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +48,18 @@ public class Game_3 extends AppCompatActivity implements View.OnClickListener{
 
     public void init()
     {
+        intent = getIntent();
+        lc = intent.getIntExtra("chuong", -1);
+        switch (lc)
+        {
+            case 1: N=10;
+            break;
+            case 2: N=20;
+            break;
+            case 3:N=40;
+            break;
+
+        }
         bt_Da1=(Button)findViewById(R.id.bt_da1);
         bt_Da2=(Button)findViewById(R.id.bt_da2);
         bt_Da3=(Button)findViewById(R.id.bt_da3);
@@ -102,7 +120,7 @@ public class Game_3 extends AppCompatActivity implements View.OnClickListener{
     {
         Random rd= new Random();
         a=rd.nextInt(LITA.getmArrAnh().size());
-        k= rd.nextInt(10);
+        k= rd.nextInt(N);
         Ch= "Có bao nhiêu "+LITA.getmArrAnh().get(a).getmTenAnh()+" trong hình vẽ ?";
         tv_Ch.setText(Ch);
         da=rd.nextInt(3);
@@ -112,7 +130,7 @@ public class Game_3 extends AppCompatActivity implements View.OnClickListener{
             if (i!=da)
             {
                 do{
-                    Da[i]=rd.nextInt(10);
+                    Da[i]=rd.nextInt(N);
                 }while (Da[i]==k);
             }
         }
@@ -206,9 +224,31 @@ public class Game_3 extends AppCompatActivity implements View.OnClickListener{
                     if(n<10)
                     {n++;
                     kecha();
-                    }else Toast.makeText(this, "Bạn đã hoàn thành với "+sao+" đáp án đúng",Toast.LENGTH_SHORT).show();
+                    }else{
+                        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                        builder.setTitle("BẠN ĐÃ HOÀN THÀNH BÀI TẬP ");
+                        builder.setMessage("Bạn đã trả lời đúng " + sao);
+                        builder.setCancelable(false);
+                        builder.setIcon(R.drawable.bt_quatao);
+
+                        builder.setPositiveButton(
+                                "OK",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        intent.putExtra("sao", sao);
+                                        setResult(3, intent);
+                                        finish();
+                                        dialog.cancel();
+                                    }
+                                });
+                        AlertDialog alertdialog = builder.create();
+                        alertdialog.show();
+                    }
                 }else Toast.makeText(this, "Bạn phải chọn ít nhất 1 đáp án trước khi tiếp tục",Toast.LENGTH_SHORT).show();
 
+                break;
+            case R.id.nut_thoat:
+                finish();
                 break;
         }
 

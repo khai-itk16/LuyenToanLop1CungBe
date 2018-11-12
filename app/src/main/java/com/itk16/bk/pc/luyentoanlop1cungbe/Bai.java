@@ -56,6 +56,10 @@ public class Bai extends AppCompatActivity implements View.OnClickListener {
                 int sao = data.getIntExtra("sao",-1);
                 Toast.makeText(this, "22222222", Toast.LENGTH_SHORT).show();
             }
+            if(resultCode == 3){
+                int sao = data.getIntExtra("sao",-1);
+                Toast.makeText(this, "33333333", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
