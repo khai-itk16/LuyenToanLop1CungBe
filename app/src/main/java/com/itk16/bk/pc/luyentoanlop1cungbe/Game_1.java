@@ -195,9 +195,10 @@ public class Game_1 extends AppCompatActivity implements View.OnClickListener{
                 }
                 break;
             case R.id.next:
-                timer.cancel();
+
                if(status==1)
-               { vt++;
+               { timer.cancel();
+               vt++;
                 kecha();
                }else Toast.makeText(this, "ban phai chon dap an truoc khi tiep tuc",Toast.LENGTH_SHORT).show();
                 break;

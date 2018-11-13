@@ -218,9 +218,10 @@ public class Game_3 extends AppCompatActivity implements View.OnClickListener{
                 }
                 break;
             case R.id.next:
-                timer.cancel();
+
                 if(status==1)
                 {
+                    timer.cancel();
                     if(n<10)
                     {n++;
                     kecha();
