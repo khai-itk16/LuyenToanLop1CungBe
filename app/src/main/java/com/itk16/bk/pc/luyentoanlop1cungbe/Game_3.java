@@ -18,8 +18,8 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Game_3 extends AppCompatActivity implements View.OnClickListener{
-    private Button bt_Da1,bt_Da2, bt_Da3, bt_Da4,bt_next, bt_back, bt_pause;
-    private TextView tv_countdown,tv_Ch;
+    private Button btResponse1,btResponse2, btResponse3, btResponse4,btNext, btBack, btPause;
+    private TextView tvCountdown,tvQuestion;
     private GridView gr_v;
     private List_Item_Anh LITA;//danh sach anh
     int k;//bien k dung de tao bien ramdom tuong ung voi mot con so trong bai hoc
@@ -42,33 +42,33 @@ public class Game_3 extends AppCompatActivity implements View.OnClickListener{
 
     public void init()
     {
-        bt_Da1=(Button)findViewById(R.id.bt_da1);
-        bt_Da2=(Button)findViewById(R.id.bt_da2);
-        bt_Da3=(Button)findViewById(R.id.bt_da3);
-        bt_Da4=(Button)findViewById(R.id.bt_da4);
-        bt_back=(Button)findViewById(R.id.nut_thoat);
-        bt_pause=(Button)findViewById(R.id.bt_pause);
-        bt_next=(Button)findViewById(R.id.next);
-        tv_countdown=(TextView)findViewById(R.id.tv_countdown);
-        tv_Ch=(TextView)findViewById(R.id.tv_Ch);
+        btResponse1=(Button)findViewById(R.id.bt_da1);
+        btResponse2=(Button)findViewById(R.id.bt_da2);
+        btResponse3=(Button)findViewById(R.id.bt_da3);
+        btResponse4=(Button)findViewById(R.id.bt_da4);
+        btBack=(Button)findViewById(R.id.nut_thoat);
+        btPause=(Button)findViewById(R.id.bt_pause);
+        btNext=(Button)findViewById(R.id.next);
+        tvCountdown=(TextView)findViewById(R.id.tv_countdown);
+        tvQuestion=(TextView)findViewById(R.id.tv_Ch);
         gr_v= (GridView)findViewById(R.id.gr_v);
-        bt_Da1.setOnClickListener(this);
-        bt_Da2.setOnClickListener(this);
-        bt_Da3.setOnClickListener(this);
-        bt_Da4.setOnClickListener(this);
-        bt_back.setOnClickListener(this);
-        bt_pause.setOnClickListener(this);
-        bt_next.setOnClickListener(this);
+        btResponse1.setOnClickListener(this);
+        btResponse2.setOnClickListener(this);
+        btResponse3.setOnClickListener(this);
+        btResponse4.setOnClickListener(this);
+        btBack.setOnClickListener(this);
+        btPause.setOnClickListener(this);
+        btNext.setOnClickListener(this);
         LITA= new List_Item_Anh();
 
 
     }
     public  void kecha()
     {
-        bt_Da1.setBackgroundResource(R.drawable.dapan);
-        bt_Da2.setBackgroundResource(R.drawable.dapan);
-        bt_Da3.setBackgroundResource(R.drawable.dapan);
-        bt_Da4.setBackgroundResource(R.drawable.dapan);
+        btResponse1.setBackgroundResource(R.drawable.dapan);
+        btResponse2.setBackgroundResource(R.drawable.dapan);
+        btResponse3.setBackgroundResource(R.drawable.dapan);
+        btResponse4.setBackgroundResource(R.drawable.dapan);
 
         random();
         ArrayList<Item_anh> item_anhs= new ArrayList<>();
@@ -78,21 +78,21 @@ public class Game_3 extends AppCompatActivity implements View.OnClickListener{
         }
         Custom_GridView custom_gridView= new Custom_GridView(this, R.layout.item_anh,item_anhs, LITA.getmArrAnh().get(a).getmAnh());
         gr_v.setAdapter(custom_gridView);
-        bt_Da1.setText(Da[0]+"");
-        bt_Da2.setText(Da[1]+"");
-        bt_Da3.setText(Da[2]+"");
-        bt_Da4.setText(Da[3]+"");
+        btResponse1.setText(Da[0]+"");
+        btResponse2.setText(Da[1]+"");
+        btResponse3.setText(Da[2]+"");
+        btResponse4.setText(Da[3]+"");
         status=0;
         check=0;
         timer= new CountDownTimer(15000,1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-                tv_countdown.setText("00:"+millisUntilFinished/1000+"");
+                tvCountdown.setText("00:"+millisUntilFinished/1000+"");
             }
 
             @Override
             public void onFinish() {
-                tv_countdown.setText("Hết giờ");
+                tvCountdown.setText("Hết giờ");
 
             }
         }.start();
@@ -104,7 +104,7 @@ public class Game_3 extends AppCompatActivity implements View.OnClickListener{
         a=rd.nextInt(LITA.getmArrAnh().size());
         k= rd.nextInt(10);
         Ch= "Có bao nhiêu "+LITA.getmArrAnh().get(a).getmTenAnh()+" trong hình vẽ ?";
-        tv_Ch.setText(Ch);
+        tvQuestion.setText(Ch);
         da=rd.nextInt(3);
         Da[da]=k;
         for (int i= 0; i<=3;i++)
@@ -125,19 +125,13 @@ public class Game_3 extends AppCompatActivity implements View.OnClickListener{
             case R.id.bt_da1:
                 if(Da[0]==k)
                 {
-                    bt_Da1.setBackgroundResource(R.drawable.dung);
-                    if(status==0)
-                    {
-                        check= 1;
-                        sao+=1;
-                        status=1;
-
-                    }
+                    btResponse1.setBackgroundResource(R.drawable.dung);
+                    Check();
                     timer.cancel();
 
                 }
                 else{
-                    bt_Da1.setBackgroundResource(R.drawable.sai);
+                    btResponse1.setBackgroundResource(R.drawable.sai);
                     status=1;
                 }
 
@@ -145,64 +139,44 @@ public class Game_3 extends AppCompatActivity implements View.OnClickListener{
             case R.id.bt_da2:
                 if(Da[1]==k)
                 {
-                    bt_Da2.setBackgroundResource(R.drawable.dung);
-                    if(status==0)
-                    {
-                        check= 1;
-                        sao+=1;
-                        status=1;
-
-                    }
+                    btResponse2.setBackgroundResource(R.drawable.dung);
+                    Check();
                     timer.cancel();
-
                 }
                 else {
-                    bt_Da2.setBackgroundResource(R.drawable.sai);
+                    btResponse2.setBackgroundResource(R.drawable.sai);
                     status=1;
                 }
                 break;
             case R.id.bt_da3:
                 if(Da[2]==k)
                 {
-                    bt_Da3.setBackgroundResource(R.drawable.dung);
-                    if(status==0)
-                    {
-                        check= 1;
-                        sao+=1;
-                        status=1;
-
-                    }
+                    btResponse3.setBackgroundResource(R.drawable.dung);
+                    Check();
                     timer.cancel();
-
                 }
                 else {
-                    bt_Da3.setBackgroundResource(R.drawable.sai);
+                    btResponse3.setBackgroundResource(R.drawable.sai);
                     status=1;
                 }
                 break;
             case R.id.bt_da4:
                 if(Da[3]==k)
                 {
-                    bt_Da4.setBackgroundResource(R.drawable.dung);
-                    if(status==0)
-                    {
-                        check= 1;
-                        sao+=1;
-                        status=1;
-
-                    }
+                    btResponse4.setBackgroundResource(R.drawable.dung);
+                    Check();
                     timer.cancel();
-
                 }
                 else {
-                    bt_Da4.setBackgroundResource(R.drawable.sai);
+                    btResponse4.setBackgroundResource(R.drawable.sai);
                     status=1;
                 }
                 break;
             case R.id.next:
-                timer.cancel();
+
                 if(status==1)
                 {
+                    timer.cancel();
                     if(n<10)
                     {n++;
                     kecha();
@@ -213,4 +187,14 @@ public class Game_3 extends AppCompatActivity implements View.OnClickListener{
         }
 
     }
+    public void Check()
+    {
+        if(status==0)
+        {
+            check= 1;
+            sao+=1;
+            status=1;
+        }
+    }
+
 }

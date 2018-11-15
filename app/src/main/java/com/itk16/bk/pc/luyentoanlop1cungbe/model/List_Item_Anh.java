@@ -24,6 +24,7 @@ public class List_Item_Anh {
         mArrAnh= new ArrayList<>();
         mArrAnh.add(new Item_anh(R.drawable.quadau, "quả dâu" ));
         mArrAnh.add(new Item_anh(R.drawable.quatao, "qua tao"));
+
     }
 
 }
