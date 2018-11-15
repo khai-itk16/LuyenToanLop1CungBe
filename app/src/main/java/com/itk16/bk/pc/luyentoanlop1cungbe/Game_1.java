@@ -103,7 +103,7 @@ public class Game_1 extends AppCompatActivity implements View.OnClickListener{
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         intent.putExtra("sao", sao);
-                        setResult(2, intent);
+                        setResult(1, intent);
                         finish();
                         dialog.cancel();
                     }

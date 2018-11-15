@@ -1,9 +1,12 @@
 package com.itk16.bk.pc.luyentoanlop1cungbe;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +20,7 @@ public class Game_2 extends AppCompatActivity implements View.OnClickListener{
     private Button bt_back, bt_pause, bt_next, bt_lonhon, bt_behon, bt_bang;
     private TextView tv_ve1, tv_ve2, tv_countdown;
     private String v1, v2;
+    private Intent intent;
     private int n1, n2;
     int d;
     int status;//da chon 1 dap an
@@ -24,6 +28,7 @@ public class Game_2 extends AppCompatActivity implements View.OnClickListener{
     int check;//kiem tra dung sai
     CountDownTimer timer;
     int n=0;
+    int N;
 
 
     @Override
@@ -35,7 +40,21 @@ public class Game_2 extends AppCompatActivity implements View.OnClickListener{
     }
     public void init()
     {
-
+        intent = getIntent();
+        lc = intent.getIntExtra("chuong", -1);
+        switch (lc)
+        {
+            case 1:N=10;
+            break;
+            case 2: N=20;
+            break;
+            case 3:N=40;
+            break;
+            case 4: N=60;
+            break;
+            case 5:N=100;
+            break;
+        }
        bt_back=(Button)findViewById(R.id.nut_thoat);
        bt_pause=(Button)findViewById(R.id.bt_dung);
        bt_behon=(Button)findViewById(R.id.bt_behon);
@@ -143,9 +162,32 @@ public class Game_2 extends AppCompatActivity implements View.OnClickListener{
                        kecha();
                        n++;
                    } else
-                       Toast.makeText(this, "Bạn đã hoàn thành bài với " + sao + " dap an dung!", Toast.LENGTH_SHORT).show();
-                   }else Toast.makeText(this, "Bạn phải chon ít nhất một đáp án trước khi tiếp tục!",Toast.LENGTH_SHORT).show();
+                       {
+                           AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                           builder.setTitle("BẠN ĐÃ HOÀN THÀNH BÀI TẬP ");
+                           builder.setMessage("Bạn đã trả lời đúng " + sao);
+                           builder.setCancelable(false);
+                           builder.setIcon(R.drawable.bt_quatao);
+
+                           builder.setPositiveButton(
+                                   "OK",
+                                   new DialogInterface.OnClickListener() {
+                                       public void onClick(DialogInterface dialog, int id) {
+                                           intent.putExtra("sao", sao);
+                                           setResult(2, intent);
+                                           finish();
+                                           dialog.cancel();
+                                       }
+                                   });
+                           AlertDialog alertdialog = builder.create();
+                           alertdialog.show();
+                       }
+               }
+                else Toast.makeText(this, "Bạn phải chon ít nhất một đáp án trước khi tiếp tục!",Toast.LENGTH_SHORT).show();
                break;
+            case R.id.nut_thoat:
+                finish();
+                break;
 
         }
     }
@@ -157,8 +199,8 @@ public class Game_2 extends AppCompatActivity implements View.OnClickListener{
 
             case 1:
 
-                n1=rd.nextInt(9)+1;
-                n2=rd.nextInt(9)+1;
+                n1=rd.nextInt(N-1)+1;
+                n2=rd.nextInt(N-1)+1;
                 v1=n1+"";
                 v2=n2+"";
                 break;
@@ -168,17 +210,17 @@ public class Game_2 extends AppCompatActivity implements View.OnClickListener{
                 if(c==0)
                 {
                 int i1, i2;
-                n1=rd.nextInt(9)+1;
-                n2=rd.nextInt(9)+1;
-                i1= rd.nextInt(n1);
+                n1=rd.nextInt(N-1)+1;
+                n2=rd.nextInt(N-1)+1;
+                i1= rd.nextInt(n1-1)+1;
                 i2=n1-i1;
                 v1=i1+" + "+i2+"";
                 v2=n2+"";
                 }else {
                     int i1, i2;
-                    n1=rd.nextInt(9)+1;
-                    n2=rd.nextInt(9)+1;
-                    i1= rd.nextInt(n2);
+                    n1=rd.nextInt(N-1)+1;
+                    n2=rd.nextInt(N-1)+1;
+                    i1= rd.nextInt(n2-1)+1;
                     i2=n2-i1;
                     v2=i1+" + "+i2+"";
                     v1=n1+"";
@@ -186,12 +228,12 @@ public class Game_2 extends AppCompatActivity implements View.OnClickListener{
                 break;
             case 3:
               int i1, i2;
-              n1=rd.nextInt(9)+1;
-              i1=rd.nextInt(n1);
+              n1=rd.nextInt(N-1)+1;
+              i1=rd.nextInt(n1-1)+1;
               i2=n1-i1;
               v1= i1+" + "+i2+"";
-              n2=rd.nextInt(9)+1;
-              i1=rd.nextInt(n2);
+              n2=rd.nextInt(N-1)+1;
+              i1=rd.nextInt(n2-1)+1;
               i2=n2-i1;
               v2=i1+" + "+i2+"";
              break;
