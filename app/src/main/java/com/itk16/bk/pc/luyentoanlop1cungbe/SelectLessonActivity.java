@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-public class Menu1 extends AppCompatActivity implements View.OnClickListener{
+public class SelectLessonActivity extends AppCompatActivity implements View.OnClickListener{
 
     private Button bt_back;
     private Button  bt1;
@@ -19,7 +19,7 @@ public class Menu1 extends AppCompatActivity implements View.OnClickListener{
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu1);
+        setContentView(R.layout.activity_selectlesson);
         khaibao();
         setevnet();
     }
@@ -55,9 +55,8 @@ public class Menu1 extends AppCompatActivity implements View.OnClickListener{
             finish();
             return;
         }
-
         int chuong = (int)v.getTag();
-        Intent intent =new Intent(Menu1.this, Bai.class);
+        Intent intent =new Intent(SelectLessonActivity.this, LessonActivity.class);
         intent.putExtra("chuong", chuong);
         startActivity(intent);
     }

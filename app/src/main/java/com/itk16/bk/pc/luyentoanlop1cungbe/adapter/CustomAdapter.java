@@ -6,7 +6,6 @@ import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.itk16.bk.pc.luyentoanlop1cungbe.Bai;
+import com.itk16.bk.pc.luyentoanlop1cungbe.LessonActivity;
 import com.itk16.bk.pc.luyentoanlop1cungbe.Game_1;
 import com.itk16.bk.pc.luyentoanlop1cungbe.Game_2;
 import com.itk16.bk.pc.luyentoanlop1cungbe.Game_3;
@@ -24,10 +23,6 @@ import com.itk16.bk.pc.luyentoanlop1cungbe.R;
 import com.itk16.bk.pc.luyentoanlop1cungbe.model.Lesson;
 
 import java.util.ArrayList;
-
-import static com.itk16.bk.pc.luyentoanlop1cungbe.R.drawable.abc_vector_test;
-import static com.itk16.bk.pc.luyentoanlop1cungbe.R.drawable.back;
-import static com.itk16.bk.pc.luyentoanlop1cungbe.R.drawable.lock;
 
 public class CustomAdapter extends ArrayAdapter<Lesson> {
     private Context context;
@@ -57,7 +52,6 @@ public class CustomAdapter extends ArrayAdapter<Lesson> {
             viewHolder.tv_Title = convertView.findViewById(R.id.Title);
             viewHolder.bt_hoc = convertView.findViewById(R.id.bt_hoc);
             convertView.setTag(viewHolder);
-            //Log.d(TAG, (position+1)+"");
        }
         else{
             viewHolder = (ViewHolder)convertView.getTag();
@@ -70,7 +64,7 @@ public class CustomAdapter extends ArrayAdapter<Lesson> {
           //  Log.d(TAG, (position+1)+"");
         }
         else{
-            switch (lesson.getSao())
+            switch (lesson.getmNumberStar())
             {
                 case 0:
                     viewHolder.im_lock.setBackgroundResource(R.drawable.sao0);
@@ -89,7 +83,7 @@ public class CustomAdapter extends ArrayAdapter<Lesson> {
             }
         }
 
-        viewHolder.tv_Title.setText(lesson.getmTenbaihoc());
+        viewHolder.tv_Title.setText(lesson.getmNameLesson());
         viewHolder.bt_hoc.setText("Bắt Đầu");
         viewHolder.bt_hoc.setBackgroundResource(R.drawable.custom_bt_play);
         viewHolder.bt_hoc.setOnClickListener(new View.OnClickListener() {
@@ -100,21 +94,21 @@ public class CustomAdapter extends ArrayAdapter<Lesson> {
                 }
                 else
                 {
-                    switch (lesson.getmNoidung()) {
+                    switch (lesson.getmContent()) {
                         case 1:
                             Intent intent1 = new Intent(context, Game_1.class);
                             intent1.putExtra("chuong", chuong);
-                            ((Bai)context).startActivityForResult(intent1, 1);
+                            ((LessonActivity)context).startActivityForResult(intent1, 1);
                             break;
                         case 2:
                             Intent intent2 = new Intent(context, Game_2.class);
                             intent2.putExtra("chuong", chuong);
-                            ((Bai)context).startActivityForResult(intent2, 1);
+                            ((LessonActivity)context).startActivityForResult(intent2, 1);
                             break;
                         case 3:
                             Intent intent3 = new Intent(context, Game_3.class);
                             intent3.putExtra("chuong", chuong);
-                            ((Bai)context).startActivityForResult(intent3, 1);
+                            ((LessonActivity)context).startActivityForResult(intent3, 1);
                             break;
                     }
                 }

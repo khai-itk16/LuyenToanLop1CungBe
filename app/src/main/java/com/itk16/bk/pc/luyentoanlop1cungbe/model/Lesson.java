@@ -3,25 +3,25 @@ package com.itk16.bk.pc.luyentoanlop1cungbe.model;
 import java.util.ArrayList;
 
 public class Lesson {
-    private String mTenbaihoc;
+    private String mNameLesson;
     private boolean mLock;
-    private int mNoidung;
-    private int sao ;
-    public Lesson(String mTenbaihoc, boolean mLock, int mNoidung, int sao) {
-        this.mTenbaihoc = mTenbaihoc;
-        this.mLock = mLock;
-        this.mNoidung = mNoidung;
-        this.sao = sao;
+    private int mContent;
+    private int mNumberStar ;
+    public Lesson(String NameLesson, boolean Lock, int Content, int NumberStar) {
+        this.mNameLesson = NameLesson;
+        this.mLock = Lock;
+        this.mContent = Content;
+        this.mNumberStar = NumberStar;
     }
 
-    public String getmTenbaihoc() {
-        return mTenbaihoc;
+    public String getmNameLesson() {
+        return mNameLesson;
     }
-
-    public void setmTenbaihoc(String mTenbaihoc) {
-        this.mTenbaihoc = mTenbaihoc;
+    public void setmNameLesson(String mTenbaihoc) {
+        this.mNameLesson = mTenbaihoc;
     }
     public boolean getmLock() {
+
         return mLock;
     }
 
@@ -29,20 +29,24 @@ public class Lesson {
         this.mLock = mLock;
     }
 
-    public int getmNoidung() {
-        return mNoidung;
+    public int getmContent() {
+
+        return mContent;
     }
 
-    public void setmNoidung(int mNoidung) {
-        this.mNoidung = mNoidung;
+    public void setmContent(int Content) {
+
+        this.mContent = Content;
     }
 
-    public int getSao() {
-        return sao;
+    public int getmNumberStar() {
+
+        return mNumberStar;
     }
 
-    public void setSao(int sao) {
-        this.sao = sao;
+    public void setmNumberStar(int NumberStar) {
+
+        this.mNumberStar = NumberStar;
     }
 
 

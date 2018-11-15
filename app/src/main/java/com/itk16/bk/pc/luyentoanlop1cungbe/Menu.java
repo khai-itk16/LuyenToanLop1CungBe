@@ -21,7 +21,7 @@ public class Menu extends AppCompatActivity {
         bt_menu1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it1 = new Intent(Menu.this, Menu1.class);
+                Intent it1 = new Intent(Menu.this, SelectLessonActivity.class);
                 startActivity(it1);
             }
         });

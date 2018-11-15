@@ -18,7 +18,7 @@ public class InTro extends AppCompatActivity
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                Intent gotomain = new Intent(InTro.this,MainActivity.class );
+                Intent gotomain = new Intent(InTro.this,StartActivity.class );
                 startActivity(gotomain);
                 finish();
             }
